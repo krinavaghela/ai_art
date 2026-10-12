@@ -1,0 +1,6 @@
+node_modules/
+build/
+.DS_Store
+# renders: keep only the small alpha WebM (the ProRes .mov is ~900 MB, over GitHub's 100 MB limit)
+out/*
+!out/kitu-paint-alpha.webm

@@ -1,0 +1,23 @@
+{
+  "name": "kitu-paint",
+  "version": "1.0.0",
+  "private": true,
+  "description": "30 s pencil-to-watercolor timelapse of Kitu and a sparrow (Remotion + GSAP + SVG)",
+  "scripts": {
+    "studio": "remotion studio",
+    "still": "remotion still KituPaint out/still.png",
+    "render:mov": "remotion render KituPaint out/kitu-paint-alpha.mov --codec=prores --prores-profile=4444 --pixel-format=yuva444p10le --image-format=png --concurrency=3 --timeout=120000",
+    "render:webm": "remotion ffmpeg -y -i out/kitu-paint-alpha.mov -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 28 -row-mt 1 -deadline good -cpu-used 4 -auto-alt-ref 0 -an out/kitu-paint-alpha.webm"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.528",
+    "gsap": "3.13.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.528"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}

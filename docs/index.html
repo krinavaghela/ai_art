@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cat Paint</title>
-<meta name="description" content="A 30-second pencil-to-watercolor timelapse of Kitu the cat and a sparrow, drawn entirely in code with SVG, GSAP and Remotion.">
-<meta property="og:title" content="Cat Paint">
+<title>AI ART</title>
+<meta name="description" content="A 30-second pencil-to-watercolor timelapse of a cat and a sparrow, drawn entirely in code with SVG, GSAP and Remotion.">
+<meta property="og:title" content="AI ART">
 <meta property="og:description" content="A pencil sketch becomes a watercolor, then comes alive. Drawn entirely in code.">
 <meta property="og:image" content="https://krinavaghela.github.io/ai_art/media/social.jpg">
 <meta property="og:type" content="website">
@@ -16,23 +16,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M14 30 L18 8 L30 22 L34 22 L46 8 L50 30 Q50 54 32 54 Q14 54 14 30Z' fill='%23b6a385'/%3E%3Ccircle cx='25' cy='34' r='3.5' fill='%2386a24e'/%3E%3Ccircle cx='39' cy='34' r='3.5' fill='%2386a24e'/%3E%3C/svg%3E">
 <style>
   :root {
-    --paper: #f7f2e8;
-    --paper-2: #efe7d8;
-    --ink: #3b3028;
-    --ink-soft: #6e5f50;
-    --line: #ddd2bf;
-    --accent: #b8643a;
+    --paper: #000000;
+    --paper-2: #121212;
+    --ink: #f5f5f5;
+    --ink-soft: #a3a3a3;
+    --line: #2a2a2a;
+    --accent: #e8a06b;
     --stage: #f7f2e8;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: #1f1b17;
-      --paper-2: #2a241f;
-      --ink: #efe6d6;
-      --ink-soft: #b9ab97;
-      --line: #3d352d;
-      --accent: #e0915f;
-    }
+    color-scheme: dark;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -60,7 +51,7 @@
   .stage video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
   .stage[data-bg="paper"] { --stage: #f7f2e8; }
   .stage[data-bg="sage"] { --stage: #dfe5d6; }
-  .stage[data-bg="night"] { --stage: #23201c; }
+  .stage[data-bg="night"] { --stage: #000000; }
   .stage[data-bg="checker"] {
     --stage: #fff;
     background-image: conic-gradient(#e7e1d6 25%, #fff 0 50%, #e7e1d6 0 75%, #fff 0);
@@ -74,7 +65,7 @@
     outline-offset: 3px;
   }
   .sw[aria-pressed="true"] { outline: 2px solid var(--accent); }
-  .sw.paper { background: #f7f2e8; } .sw.sage { background: #dfe5d6; } .sw.night { background: #23201c; }
+  .sw.paper { background: #f7f2e8; } .sw.sage { background: #dfe5d6; } .sw.night { background: #000000; border-color: #555; }
   .sw.checker { background: conic-gradient(#ccc 25%, #fff 0 50%, #ccc 0 75%, #fff 0); background-size: 10px 10px; }
   .btn {
     font: 500 14px Inter, system-ui, sans-serif; color: var(--ink); text-decoration: none;
@@ -84,36 +75,19 @@
   .actions { display: flex; flex-wrap: wrap; gap: 8px; }
   .note { font-size: 13px; color: var(--ink-soft); margin: 10px 0 0; }
 
-  section { padding: 56px 0 8px; }
-  h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(26px, 3.6vw, 34px); margin: 0 0 18px; }
-  .beats { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
-  .beats li { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
-  .beats button {
-    all: unset; cursor: pointer; font: 500 14px Inter, system-ui, sans-serif; color: var(--accent);
-    font-variant-numeric: tabular-nums; align-self: start; padding-top: 2px;
-  }
-  .beats button:hover { text-decoration: underline; }
-  .beats b { font-weight: 500; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-  .card { background: var(--paper-2); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
-  .card h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 19px; margin: 0 0 6px; }
-  .card p { margin: 0; color: var(--ink-soft); font-size: 15px; }
-  code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--paper-2); padding: 1px 6px; border-radius: 5px; }
-  pre { background: var(--paper-2); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; overflow-x: auto; font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
   footer { padding: 56px 0 48px; color: var(--ink-soft); font-size: 14px; }
-  footer a, .card a { color: var(--accent); }
+  footer a { color: var(--accent); }
   @media (max-width: 560px) {
     header { padding-top: 36px; }
-    .beats li { grid-template-columns: 64px 1fr; gap: 10px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <p class="eyebrow">AI art · a 30-second film</p>
-    <h1>Cat <em>Paint</em></h1>
-    <p class="lede">A pencil sketches Kitu the cat and a sparrow, then a brush paints them in watercolor. Once the paint dries, the picture comes alive. Every line, wash and blink is drawn in code.</p>
+    <p class="eyebrow">A 30-second film</p>
+    <h1>AI <em>ART</em></h1>
+    <p class="lede">A pencil sketches a cat and a sparrow, then a brush paints them in watercolor. Once the paint dries, the picture comes alive. Every line, wash and blink is drawn in code.</p>
   </header>
 
   <div class="stage" id="stage" data-bg="paper">
@@ -124,7 +98,7 @@
       <span>Background</span>
       <button class="sw paper" data-bg="paper" aria-pressed="true" title="Paper" aria-label="Paper"></button>
       <button class="sw sage" data-bg="sage" aria-pressed="false" title="Sage" aria-label="Sage"></button>
-      <button class="sw night" data-bg="night" aria-pressed="false" title="Night" aria-label="Night"></button>
+      <button class="sw night" data-bg="night" aria-pressed="false" title="Black" aria-label="Black"></button>
       <button class="sw checker" data-bg="checker" aria-pressed="false" title="Show transparency" aria-label="Checkerboard"></button>
     </div>
     <div class="actions">
@@ -135,36 +109,8 @@
   </div>
   <p class="note" id="note">The video has a transparent background, so it sits on whatever color you pick.</p>
 
-  <section>
-    <h2>What happens</h2>
-    <ol class="beats">
-      <li><button data-t="0">0:00</button><div><b>Sketch.</b> A pencil lays down construction circles, then the contours of the cat, the sparrow, the jar, the palette and the brush, and finishes with hatching.</div></li>
-      <li><button data-t="6">0:06</button><div><b>Props.</b> The palette, jar and brush get their washes, and paint fills the palette wells.</div></li>
-      <li><button data-t="7.5">0:07</button><div><b>Painting.</b> The brush rinses in the jar, loads color and paints in layers: fur, whites, pinks, the sparrow, shading, tabby markings, green eyes and fine detail.</div></li>
-      <li><button data-t="18.8">0:19</button><div><b>Alive.</b> The pencil fades under the paint. Kitu blinks and starts to breathe, and her tail sways.</div></li>
-      <li><button data-t="20.4">0:20</button><div><b>Flight.</b> The sparrow hops and flutters around. Kitu follows it with her eyes and head, and her ears twitch.</div></li>
-      <li><button data-t="26.2">0:26</button><div><b>The smirk.</b> The sparrow lands on her head. She glances up, looks back at you, gives a slow blink and smirks.</div></li>
-    </ol>
-  </section>
 
-  <section>
-    <h2>How it's made</h2>
-    <div class="grid">
-      <div class="card"><h3>Layered SVG</h3><p>The cat, sparrow and props are hand-placed splines. Every outline gets a slight wobble so it looks hand drawn.</p></div>
-      <div class="card"><h3>One GSAP timeline</h3><p>A single paused timeline holds the pencil's route, the brush's dips and strokes, each wash reveal, the blinks, the flight and the smirk. The renderer jumps it to each frame's time.</p></div>
-      <div class="card"><h3>Watercolor in filters</h3><p>Turbulence and displacement give ragged, bleeding edges. Eroded rims make pigment pool at the edges, and a multiplied grain stands in for paper.</p></div>
-      <div class="card"><h3>Rendered by Remotion</h3><p>Frames are rendered in headless Chrome and exported as ProRes 4444 and VP9 WebM, both with transparency.</p></div>
-    </div>
-  </section>
 
-  <section>
-    <h2>Run it yourself</h2>
-<pre>git clone https://github.com/krinavaghela/ai_art.git
-cd ai_art
-npm install
-npm run studio        # preview and scrub
-npm run render:mov    # ProRes 4444 with transparency</pre>
-  </section>
 
   <footer>
     Source on <a href="https://github.com/krinavaghela/ai_art">GitHub</a>. Made with SVG, GSAP and Remotion.
@@ -203,13 +149,6 @@ npm run render:mov    # ProRes 4444 with transparency</pre>
     } catch (err) {}
 
     document.getElementById('replay').addEventListener('click', function () { video.currentTime = 0; play(); });
-    document.querySelectorAll('.beats button').forEach(function (b) {
-      b.addEventListener('click', function () {
-        video.currentTime = parseFloat(b.dataset.t);
-        play();
-        stage.scrollIntoView({behavior: 'smooth', block: 'center'});
-      });
-    });
   })();
 </script>
 </body>

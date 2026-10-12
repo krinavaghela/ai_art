@@ -1,6 +1,6 @@
 # Cat Paint
 
-A 30-second pencil-to-watercolor timelapse of Kitu the cat and a sparrow, with a palette, a brush and a water jar.
+A 30-second pencil-to-watercolor timelapse of a cat and a sparrow, with a palette, a brush and a water jar.
 It's drawn in SVG, animated with GSAP and rendered with Remotion. The background is fully transparent.
 
 **Watch it:** https://krinavaghela.github.io/ai_art/
@@ -12,9 +12,9 @@ Files: [`docs/media/cat-paint-alpha.webm`](docs/media/cat-paint-alpha.webm) (VP9
 | 0–6 s | A pencil sketches the construction lines, the contours and the hatching. |
 | 6–7.4 s | The props get their washes and paint fills the palette wells. |
 | 7.4–18.8 s | The brush rinses, loads color and paints in order: fur, whites, pinks, sparrow, shading, tabby markings, green eyes, then fine detail. |
-| ~19 s | The painting comes alive: Kitu blinks and starts breathing, and the tail sways. |
-| 21–26 s | The sparrow hops, takes off and flutters around. Kitu's eyes and head follow it, the ears twitch, and she blinks. |
-| 26–30 s | The sparrow lands on Kitu's head. She looks up at it, then back at the viewer, gives a slow blink and ends on a smug smirk. |
+| ~19 s | The painting comes alive: the cat blinks and starts breathing, and the tail sways. |
+| 21–26 s | The sparrow hops, takes off and flutters around. The cat's eyes and head follow it, the ears twitch, and she blinks. |
+| 26–30 s | The sparrow lands on the cat's head. She looks up at it, then back at the viewer, gives a slow blink and ends on a smug smirk. |
 
 ## Getting started
 

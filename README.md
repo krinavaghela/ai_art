@@ -3,7 +3,9 @@
 A 30-second pencil-to-watercolor timelapse of Kitu the cat and a sparrow, with a palette, a brush and a water jar.
 It's drawn in SVG, animated with GSAP and rendered with Remotion. The background is fully transparent.
 
-Preview: [`media/cat-paint-alpha.webm`](media/cat-paint-alpha.webm) (VP9 with alpha)
+**Watch it:** https://krinavaghela.github.io/ai_art/
+
+Files: [`docs/media/cat-paint-alpha.webm`](docs/media/cat-paint-alpha.webm) (VP9 with transparency) and [`docs/media/cat-paint-paper.mp4`](docs/media/cat-paint-paper.mp4) (H.264 on paper, for Safari and phones).
 
 | Time | What happens |
 |---|---|
@@ -21,6 +23,7 @@ npm install
 npm run studio        # live preview and scrubbing in Remotion Studio
 npm run render:mov    # ProRes 4444 with alpha -> out/cat-paint-alpha.mov
 npm run render:webm   # VP9 with alpha, transcoded from the .mov -> out/cat-paint-alpha.webm
+npm run render:mp4    # H.264 on a paper background             -> out/cat-paint-paper.mp4
 ```
 
 `scripts/shots.sh 90 300 570` renders review stills on a cream background into `out/review/` (needs Python 3 with Pillow).
@@ -30,7 +33,7 @@ npm run render:webm   # VP9 with alpha, transcoded from the .mov -> out/cat-pain
 ```
 src/
   index.ts              Remotion entry point
-  Root.tsx              composition: 1920×1080, 30 fps, 30 s
+  Root.tsx              compositions (1920×1080, 30 fps, 30 s): CatPaint (transparent), CatPaintOnPaper
   scene/Scene.tsx       SVG renderer: watercolor filters, washes, fur, animated face, sparrow, tools
   artwork/art.ts        shapes and colors (cat, sparrow, palette, jar, brush, pencil)
   artwork/items.ts      washes, ink lines and pencil strokes, each tagged with its paint pass
@@ -40,8 +43,9 @@ src/
 scripts/
   shots.sh              review stills
   flatten.py            flattens transparent frames onto cream
-media/
-  cat-paint-alpha.webm  rendered film with alpha
+docs/                   the GitHub Pages website
+  index.html            film player, background picker, timeline, how it's made
+  media/                cat-paint-alpha.webm, cat-paint-paper.mp4, poster and social images
 ```
 
 Renders go to `out/`, which git ignores. The ProRes file is about 900 MB, over GitHub's 100 MB file limit.

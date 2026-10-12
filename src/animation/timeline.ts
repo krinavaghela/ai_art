@@ -1,9 +1,9 @@
 // One paused GSAP timeline choreographs the whole film; the renderer seeks it per frame.
 import {gsap} from 'gsap';
-import {P, spline, cumLens, pointAt, polyLen, centroid, maxDist, dist, clamp} from './geom';
-import {WELLS, BRUSH_REST, BIRD_PERCH, CAT_AT} from './art';
-import {WASHES, INKS, SKETCHES, toWorld, geo} from './items';
-import {FUR} from './fur';
+import {P, spline, cumLens, pointAt, polyLen, centroid, maxDist, dist, clamp} from '../lib/geom';
+import {WELLS, BRUSH_REST, BIRD_PERCH, CAT_AT} from '../artwork/art';
+import {WASHES, INKS, SKETCHES, toWorld, geo} from '../artwork/items';
+import {FUR} from '../artwork/fur';
 
 export const FPS = 30;
 export const DURATION = 30;

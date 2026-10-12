@@ -1,6 +1,6 @@
 // Assemble the painting into washes (filled watercolour layers), inks (fine brush lines)
 // and pencil sketch strokes, each tagged with the paint pass that lays it down.
-import {P, ellipse, mirror, spline, blob, tube, rand} from './geom';
+import {P, ellipse, mirror, spline, blob, tube, rand} from '../lib/geom';
 import {
   C, WELLS, Wash, Ink, Sketch, PartId, Geo, STATIC_LIVE, CAT_AT, BIRD_PERCH, BIRD_SCALE, BRUSH_REST,
   HEAD, EAR_L, EAR_R, EAR_L_IN, EAR_R_IN, BODY, HAUNCH, BIB, LEG_L, LEG_R, PAW_L, PAW_R, tailShape, tailMarks,

@@ -6,8 +6,8 @@
   "scripts": {
     "studio": "remotion studio",
     "still": "remotion still KituPaint out/still.png",
-    "render:mov": "remotion render KituPaint out/kitu-paint-alpha.mov --codec=prores --prores-profile=4444 --pixel-format=yuva444p10le --image-format=png --concurrency=3 --timeout=120000",
-    "render:webm": "remotion ffmpeg -y -i out/kitu-paint-alpha.mov -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 28 -row-mt 1 -deadline good -cpu-used 4 -auto-alt-ref 0 -an out/kitu-paint-alpha.webm"
+    "render:mov": "remotion render KituPaint out/cat-paint-alpha.mov --codec=prores --prores-profile=4444 --pixel-format=yuva444p10le --image-format=png --concurrency=3 --timeout=120000",
+    "render:webm": "remotion ffmpeg -y -i out/cat-paint-alpha.mov -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 28 -row-mt 1 -deadline good -cpu-used 4 -auto-alt-ref 0 -an out/cat-paint-alpha.webm"
   },
   "dependencies": {
     "@remotion/cli": "4.0.528",

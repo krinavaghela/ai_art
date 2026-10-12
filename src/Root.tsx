@@ -1,6 +1,6 @@
 import React from 'react';
 import {Composition} from 'remotion';
-import {Scene, FPS, DURATION} from './Scene';
+import {Scene, FPS, DURATION} from './scene/Scene';
 
 export const RemotionRoot: React.FC = () => (
   <>

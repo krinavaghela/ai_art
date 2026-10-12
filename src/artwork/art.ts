@@ -1,6 +1,6 @@
 // All artwork as data. Cat parts are in cat-local space (base centre at 0,0, up is -y);
 // sparrow parts in bird-local space (body centre at 0,0, facing +x); props in world space.
-import {P, ellipse, blob, tube, mirror, spline, lerp, rand} from './geom';
+import {P, ellipse, blob, tube, mirror, spline, lerp, rand} from '../lib/geom';
 
 export const C = {
   fur: '#b6a385',

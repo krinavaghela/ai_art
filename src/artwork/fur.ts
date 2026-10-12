@@ -1,6 +1,6 @@
 // Dry-brush fur: hundreds of short tapered strokes that follow the form, bucketed into
 // a few paths per (part, colour, timing bucket) so the renderer stays light.
-import {P, tube, rand, ellipse, polyD, centroid} from './geom';
+import {P, tube, rand, ellipse, polyD, centroid} from '../lib/geom';
 import {PartId, HEAD, BODY, LEG_L, LEG_R, EAR_L, EAR_R, EAR_L_IN, EAR_R_IN, BIB, HAUNCH, B} from './art';
 
 export const inPoly = (p: P, poly: P[]) => {

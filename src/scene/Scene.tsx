@@ -1,16 +1,16 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
-import {P, rough, polyD, blob, clamp, lerp, pointAt} from './geom';
+import {P, rough, polyD, blob, clamp, lerp, pointAt} from '../lib/geom';
 import {
   C, Wash, Ink, Sketch, PartId, Live, CAT_AT, BIRD_PERCH, BIRD_SCALE, B, PENCIL,
   eyeOutline, eyeCentre, mouthLines, whiskers, EAR_PIVOT_L, EAR_PIVOT_R, WATER, HEAD_SCALE, HEAD_ORIGIN,
-} from './art';
-import {WASHES, INKS, SKETCHES, geo} from './items';
-import {FUR} from './fur';
+} from '../artwork/art';
+import {WASHES, INKS, SKETCHES, geo} from '../artwork/items';
+import {FUR} from '../artwork/fur';
 import {
   FPS as _FPS, DURATION as _DUR, sample, State, ORIGIN, MAXR, PENCIL_ROUTE, BRUSH_ROUTE, RIPPLES, STAINS,
   birdPathAt, LAND_LOCAL,
-} from './timeline';
+} from '../animation/timeline';
 
 export const FPS = _FPS;
 export const DURATION = _DUR;
